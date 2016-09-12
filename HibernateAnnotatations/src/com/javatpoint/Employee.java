@@ -1,14 +1,8 @@
 package com.javatpoint;
 
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
 
-
-//@Entity
-//@Table(name= "emp500")
 public class Employee {
-//@Id
+
 private int id;
 private String firstName,lastName;
 
