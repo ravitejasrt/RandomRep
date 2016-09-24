@@ -79,26 +79,30 @@ public class JIntellitypeTester extends JFrame implements HotkeyListener, Intell
     * @param args any command line arguments
     */
    public static void main(String[] args) {
-      System.out.println(new File(".").getAbsolutePath());
-      // first check to see if an instance of this application is already
-      // running, use the name of the window title of this JFrame for checking
-      if (JIntellitype.checkInstanceAlreadyRunning("JIntellitype Test Application")) {
-         System.exit(1);
-      }
+	      System.out.println(new File(".").getAbsolutePath());
+	      // first check to see if an instance of this application is already
+	      // running, use the name of the window title of this JFrame for checking
+	      if (JIntellitype.checkInstanceAlreadyRunning("JIntellitype Test Application")) {
+	         System.exit(1);
+	      }
 
-      // next check to make sure JIntellitype DLL can be found and we are on
-      // a Windows operating System
-      if (!JIntellitype.isJIntellitypeSupported()) {
-         System.exit(1);
-      }
+	      // next check to make sure JIntellitype DLL can be found and we are on
+	      // a Windows operating System
+	      if (!JIntellitype.isJIntellitypeSupported()) {
+	         System.exit(1);
+	      }
 
-      mainFrame = new JIntellitypeTester();
-      mainFrame.setTitle("JIntellitype Test Application");
-      center(mainFrame);
-      mainFrame.setVisible(true);
-      mainFrame.initJIntellitype();
+	      mainFrame = new JIntellitypeTester();
+	      mainFrame.setTitle("JIntellitype Test Application");
+	      center(mainFrame);
+	      mainFrame.setVisible(true);
+	      mainFrame.initJIntellitype();
+	   }
+
+
+   public static void main(String[] args) {
+
    }
-
    /*
     * (non-Javadoc)
     * @see com.melloware.jintellitype.HotkeyListener#onHotKey(int)
@@ -309,5 +313,5 @@ public class JIntellitypeTester extends JFrame implements HotkeyListener, Intell
       textArea.append(text);
       textArea.append("\n");
    }
-
+   
 }
